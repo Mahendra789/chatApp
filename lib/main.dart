@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import './screens/welcome.dart';
 import './screens/messages.dart';
+import './screens/conversation.dart';
 
 void main() {
   runApp(MyApp());
@@ -68,7 +69,7 @@ class MyApp extends StatelessWidget {
           fontFamily: 'lato'),
       home: Scaffold(
         backgroundColor: Colors.transparent,
-        body: Messages(),
+        body: Conversation(),
       ),
     );
   }
