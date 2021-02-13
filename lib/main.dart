@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './screens/welcome.dart';
+import './screens/messages.dart';
 
 void main() {
   runApp(MyApp());
@@ -62,11 +63,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           primarySwatch: PrimaryColor,
           backgroundColor: PrimaryBackGround,
-          accentColor: PrimaryLight,
+          primaryColor: PrimaryColor,
+          primaryColorLight: PrimaryLight,
           fontFamily: 'lato'),
       home: Scaffold(
         backgroundColor: Colors.transparent,
-        body: Welcome(),
+        body: Messages(),
       ),
     );
   }
