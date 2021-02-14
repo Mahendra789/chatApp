@@ -18,7 +18,7 @@ class Conversation extends StatelessWidget {
         actions: <Widget>[
           IconButton(
             icon: Icon(
-              Icons.info,
+              Icons.info_outline,
               color: const Color(0xffdf193e),
             ),
             onPressed: () {},
