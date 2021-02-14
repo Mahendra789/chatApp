@@ -5,6 +5,7 @@ import './screens/messages.dart';
 import './screens/conversation.dart';
 import './screens/groups.dart';
 import './screens/contacts.dart';
+import './screens/profile.dart';
 
 void main() {
   runApp(MyApp());
@@ -71,7 +72,7 @@ class MyApp extends StatelessWidget {
           fontFamily: 'lato'),
       home: Scaffold(
         backgroundColor: Colors.transparent,
-        body: Contacts(),
+        body: Profile(),
       ),
     );
   }
