@@ -6,7 +6,12 @@ import './../screens/groups.dart';
 import './../screens/profile.dart';
 import './../screens/contacts.dart';
 
-class BottomNavigation extends StatelessWidget {
+class BottomNavigation extends StatefulWidget {
+  @override
+  _BottomNavigationState createState() => _BottomNavigationState();
+}
+
+class _BottomNavigationState extends State<BottomNavigation> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,42 +26,23 @@ class BottomNavigation extends StatelessWidget {
       child: CurvedNavigationBar(
         backgroundColor: const Color(0xffdf193e),
         items: <Widget>[
-          new IconButton(
-            icon: new Icon(Icons.message_outlined),
-            color: Theme.of(context).primaryColor,
-            onPressed: () {
-              Navigator.of(context).pushNamed(Messages.routeName);
-            },
-          ),
-          new IconButton(
-            icon: new Icon(Icons.group_add_outlined),
-            color: Theme.of(context).primaryColor,
-            onPressed: () {
-              Navigator.of(context).pushNamed(Groups.routeName);
-            },
-          ),
-          new IconButton(
-            icon: new Icon(Icons.add),
-            color: Theme.of(context).primaryColor,
-            onPressed: () {},
-          ),
-          new IconButton(
-            icon: new Icon(Icons.list_alt_outlined),
-            color: Theme.of(context).primaryColor,
-            onPressed: () {
-              Navigator.of(context).pushNamed(Contacts.routeName);
-            },
-          ),
-          new IconButton(
-            icon: new Icon(Icons.person),
-            color: Theme.of(context).primaryColor,
-            onPressed: () {
-              Navigator.of(context).pushNamed(Profile.routeName);
-            },
-          ),
+          Icon(Icons.message_outlined, size: 30),
+          Icon(Icons.group_add_outlined, size: 30),
+          Icon(Icons.list_alt_outlined, size: 30),
+          Icon(Icons.person, size: 30),
         ],
         onTap: (index) {
-          //Handle button tap
+          setState(() {
+            if (index == 0) {
+              Navigator.of(context).pushNamed(Messages.routeName);
+            } else if (index == 1) {
+              Navigator.of(context).pushNamed(Groups.routeName);
+            } else if (index == 2) {
+              Navigator.of(context).pushNamed(Contacts.routeName);
+            } else {
+              Navigator.of(context).pushNamed(Profile.routeName);
+            }
+          });
         },
       ),
     );
