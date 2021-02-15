@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import './../widgets/message_card.dart';
 import './../models/chat.dart';
+import './../widgets/bottom_navigation.dart';
 
 class Messages extends StatelessWidget {
-  // final List<Chat> chatList;
-  // Messages(this.chatList);
+  static const routeName = '/messages';
 
   final List<Chat> chatList = [
     Chat(
@@ -97,6 +97,7 @@ class Messages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomNavigation(),
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(

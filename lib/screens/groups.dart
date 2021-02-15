@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 
 import './../widgets/groups_card.dart';
 import './../models/group.dart';
+import './../widgets/bottom_navigation.dart';
 
 class Groups extends StatelessWidget {
+  static const routeName = '/groups';
+
   final List<Group> groupList = [
     Group(
       id: 'id1',
@@ -84,6 +87,7 @@ class Groups extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomNavigation(),
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(

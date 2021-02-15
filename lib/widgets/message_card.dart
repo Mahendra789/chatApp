@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './../models/chat.dart';
+import './../screens/conversation.dart';
 
 class MessageCard extends StatefulWidget {
   const MessageCard({@required this.chat});
@@ -58,6 +59,9 @@ class _MessageCardState extends State<MessageCard> {
                   fontSize: 16,
                 ),
               ),
+              onTap: () {
+                Navigator.of(context).pushNamed(Conversation.routeName);
+              },
             ),
           ),
         ),

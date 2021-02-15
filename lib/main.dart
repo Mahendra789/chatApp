@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import './screens/welcome.dart';
 import './screens/messages.dart';
-import './screens/conversation.dart';
 import './screens/groups.dart';
 import './screens/contacts.dart';
 import './screens/profile.dart';
+import './screens/conversation.dart';
 
 void main() {
   runApp(MyApp());
@@ -65,14 +65,25 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-          primarySwatch: PrimaryColor,
-          backgroundColor: PrimaryBackGround,
-          primaryColor: PrimaryColor,
-          primaryColorLight: PrimaryLight,
-          fontFamily: 'lato'),
+        primarySwatch: PrimaryColor,
+        backgroundColor: PrimaryBackGround,
+        primaryColor: PrimaryColor,
+        primaryColorLight: PrimaryLight,
+        fontFamily: 'lato',
+      ),
+      routes: {
+        Messages.routeName: (ctx) => Messages(),
+        Groups.routeName: (ctx) => Groups(),
+        Contacts.routeName: (ctx) => Contacts(),
+        Profile.routeName: (ctx) => Profile(),
+        Conversation.routeName: (ctx) => Conversation(),
+      },
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(builder: (ctx) => Welcome());
+      },
       home: Scaffold(
         backgroundColor: Colors.transparent,
-        body: Profile(),
+        body: Welcome(),
       ),
     );
   }

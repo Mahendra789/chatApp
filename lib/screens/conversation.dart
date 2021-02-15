@@ -4,6 +4,7 @@ import './../widgets/conversation_card.dart';
 import './../widgets/newMessage.dart';
 
 class Conversation extends StatelessWidget {
+  static const routeName = '/conversations';
   @override
   Widget build(BuildContext context) {
     return Scaffold(

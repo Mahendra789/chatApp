@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 
 import './../widgets/profile_card.dart';
 import './../models/profileCardDetails.dart';
+import './../widgets/bottom_navigation.dart';
 
 class Profile extends StatelessWidget {
+  static const routeName = '/profile';
+
   final List<ProfileCardDetails> profileCardDetailsList = [
     ProfileCardDetails(
       id: 'id1',
@@ -44,6 +47,7 @@ class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomNavigation(),
       appBar: AppBar(
         elevation: 0,
         backgroundColor: const Color(0xffdf193e),

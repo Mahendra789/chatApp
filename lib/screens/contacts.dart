@@ -1,11 +1,12 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 import './../widgets/contact_card.dart';
 import './../models/contact.dart';
+import './../widgets/bottom_navigation.dart';
 
 class Contacts extends StatelessWidget {
+  static const routeName = '/contacts';
+
   final List<Contact> onlineContacts = [
     Contact(
       id: 'id1',
@@ -60,6 +61,7 @@ class Contacts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomNavigation(),
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(

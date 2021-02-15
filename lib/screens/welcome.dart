@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './messages.dart';
+
 class Welcome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -94,7 +96,9 @@ class Welcome extends StatelessWidget {
                       color: const Color(0xffdf193e),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(Messages.routeName);
+                  },
                 ),
               ),
               FlatButton(
